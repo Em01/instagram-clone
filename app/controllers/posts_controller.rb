@@ -15,6 +15,16 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+
+    def edit
+      p "hello"
+      @post = Post.find(params[:id])
+
+      if @post.update(params["post"].permit(:title, :description))
+        redirect_to '/posts'
+      else
+        render 'edit'
   end
+end
 
 end
