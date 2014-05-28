@@ -1,12 +1,11 @@
-<% if @posts.any? %>
+<% if @posts.none? %>
+  No posts yet
+<% else %>
   <% @posts.each do |post| %>
-  <div class="Post">
     <h2><%= post.title %></h2>
-  </div>
+    <p><%= post.description %></p>
+    <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
   <% end %>
-
-  <% else %>
-    No posts yet
   <% end %>
 
     <%= link_to "Make a Post", new_post_path %>

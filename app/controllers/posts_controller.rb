@@ -9,22 +9,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params["post"].permit(:title, :description))
-    if @post.save
-      redirect_to '/posts'
-    else
-      render 'new'
+    @post = Post.new(params[:post].permit(:title, :description, :picture))
+    @post.save
+
+    redirect_to posts_path
     end
 
-    def edit
-      p "hello"
-      @post = Post.find(params[:id])
+#     def edit
+#       @post = Post.find(params[:id])
 
-      if @post.update(params["post"].permit(:title, :description))
-        redirect_to '/posts'
-      else
-        render 'edit'
-  end
-end
+#       if @post.update(params["post"].permit(:title, :description))
+#         redirect_to '/posts'
+#       else
+#         render 'edit'
+#   end
+# end
 
 end

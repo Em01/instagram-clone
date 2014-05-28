@@ -38,6 +38,7 @@ group :development, :test do
   gem 'poltergeist'
 end
 
+gem 'paperclip', github: 'thoughtbot/paperclip'
 # Use unicorn as the app server
 # gem 'unicorn'
 
