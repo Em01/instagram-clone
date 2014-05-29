@@ -66,11 +66,9 @@ describe 'deleting posts' do
       login_as emma
     end
 
-    it 'is removed from the posts page' do 
+    it 'shows no delete link' do 
       visit '/posts'
-      click_link 'Delete'
-
-      expect(page).to have_content "Stef's pic"
+      expect(page).not_to have_link "Delete"
     end
   end
 end

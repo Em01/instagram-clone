@@ -18,13 +18,13 @@ class PostsController < ApplicationController
     end
 
     def destroy
-      @post = Post.find params[:id]
-
-      if @post.user == current_user
+      @post = current_user.posts.find params[:id]
       @post.destroy
+      
       flash[:notice] = 'Successfully deleted'
-      end
-
+    rescue ActiveRecord::RecordNotFound
+      flash[:alert] = 'This is not your post!'
+    ensure
       redirect_to '/posts'
     end
 
