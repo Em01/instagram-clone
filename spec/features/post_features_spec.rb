@@ -11,6 +11,21 @@ describe 'posts index page' do
 end
 
 describe 'Making a post' do 
+  context 'logged out' do 
+    it 'prompts us to sign in' do 
+    visit '/posts'
+    click_link 'Make a Post'
+
+    expect(page).to have_content 'Sign in'
+    end
+  end
+
+  context 'logged in' do 
+    before do
+      user = User.create(email: 'emma@e.com', password: '12345678', password_confirmation: '12345678')      
+      login_as user
+    end
+
   it 'adds it to the home page' do 
         visit 'posts/new'
         fill_in 'Title', with: 'My new post'
@@ -24,7 +39,7 @@ describe 'Making a post' do
         expect(page).to have_content 'My new post'
         expect(page).to have_css 'img.uploaded-pic'
       end
-
+    end
 
 
 
