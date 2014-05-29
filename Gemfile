@@ -39,6 +39,7 @@ group :development, :test do
 end
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'aws-sdk'
 # Use unicorn as the app server
 # gem 'unicorn'
 

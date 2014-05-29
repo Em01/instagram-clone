@@ -41,6 +41,9 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
+    aws-sdk (1.41.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
     builder (3.2.2)
     capybara (2.2.1)
@@ -173,6 +176,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  aws-sdk
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
