@@ -11,10 +11,23 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post].permit(:title, :description, :picture))
-    @post.save
+    @post.user = current_user
+    @post.save!
 
     redirect_to posts_path
     end
+
+    def destroy
+      @post = Post.find params[:id]
+
+      if @post.user == current_user
+      @post.destroy
+      flash[:notice] = 'Successfully deleted'
+      end
+
+      redirect_to '/posts'
+    end
+
 
   # def login_as_user
   # end

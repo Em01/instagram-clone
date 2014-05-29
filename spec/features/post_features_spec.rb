@@ -41,11 +41,40 @@ describe 'Making a post' do
       end
     end
 
-
-
-
+describe 'deleting posts' do 
+  context 'my post' do 
+    before do 
+      emma = User.create(email: 'emma@e.com', password: '12345678', password_confirmation: '12345678')      
+      login_as emma
+      Post.create(title: 'Hello', description: 'World', user: emma)
     end
 
+    it 'is removed from the posts page' do 
+      visit '/posts'
+      click_link 'Delete'
+
+      expect(page).to have_content 'Successfully deleted'
+    end
+  end
+
+  context 'not my post' do 
+    before do 
+      emma = User.create(email: 'emma@e.com', password: '12345678', password_confirmation: '12345678')      
+      stef = User.create(email: 'stef@e.com', password: '12345678', password_confirmation: '12345678') 
+      Post.create(title: "Stef's pic", description: 'Test', user: stef)
+
+      login_as emma
+    end
+
+    it 'is removed from the posts page' do 
+      visit '/posts'
+      click_link 'Delete'
+
+      expect(page).to have_content "Stef's pic"
+    end
+  end
+end
+end
 
 # describe 'Editing a post' do 
 #   before { Post.create(title: 'Photo', description: 'a test picture')}

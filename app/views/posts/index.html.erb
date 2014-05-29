@@ -5,8 +5,9 @@
     <h2><%= post.title %></h2>
     <p><%= post.description %></p>
     <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+    <%= link_to 'Delete', post_path(post), method: :delete %>   
   <% end %>
-  <% end %>
+<% end %>
 
     <%= link_to "Make a Post", new_post_path %>
     <%= link_to "New post" %>
