@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
+
 
 group :development, :test do 
   gem 'annotate'
@@ -40,6 +40,7 @@ end
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
+gem 'devise'
 # Use unicorn as the app server
 # gem 'unicorn'
 
