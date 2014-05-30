@@ -41,6 +41,8 @@ end
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 gem 'devise'
+
+gem 'bootstrap-sass'
 # Use unicorn as the app server
 # gem 'unicorn'
 
