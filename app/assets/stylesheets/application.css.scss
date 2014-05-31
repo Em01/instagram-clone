@@ -20,14 +20,16 @@ body {
 }
 
 .jumbotron {
-  background: image-url('collage.png');
+  background: image-url('collage.png'); 
   background-repeat: none;
+
+  
 
 
   .container.top {
     background: rgba(255, 255, 255, 0.85);
-    padding: 30px;
-    color: #C9C9C9;
+    padding: 30px 50px;
+    border-radius: 20px;
   }
 }
 
