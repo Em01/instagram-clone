@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem "factory_girl_rails"
 end
 
 gem 'paperclip', github: 'thoughtbot/paperclip'

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: 5fa9db4dbe061f9449fe1128099c38e6f4a8d4b5
+  revision: 73fd316733325c8de2f16e5f3655b4938dfb156e
   specs:
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
@@ -76,6 +76,11 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.1.0)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.0.7)
@@ -162,7 +167,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    tzinfo (1.2.0)
+    tzinfo (1.2.1)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
@@ -184,6 +189,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
   paperclip!
