@@ -31,13 +31,13 @@
                     <%= link_to 'Delete', post_path(post), method: :delete,
                       class: 'btn btn-lg btn-danger' %>   
                   <% end %>
-                   <%= link_to 'Show More', '#', class: 'btn btn-lg btn-info' %>
+                   <%= link_to 'Show More', '#', class: 'btn btn-lg btn-info', data: { toggle: 'modal', target: ".image-modal-#{post.id}" } %>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="modal fade">
+          <div class="modal fade image-modal-<%= post.id %>">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
