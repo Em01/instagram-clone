@@ -17,14 +17,23 @@
   <% else %>
     <div class='row'>
       <% @posts.each do |post| %>
-        <div class='col-md-4'>
-          <h2><%= post.title %></h2>
-          <p><%= post.description %></p>
-          <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
-    
-          <% if post.user == current_user %>
-            <%= link_to 'Delete', post_path(post), method: :delete %>   
-          <% end %>
+        <div class='col-sm-4'>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><%= post.title %></h3>
+              </div>
+              <div class="panel-body">
+                <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+
+                <div class='buttons'>
+                  <% if post.user == current_user %>
+                    <%= link_to 'Delete', post_path(post), method: :delete,
+                      class: 'btn btn-lg btn-danger' %>   
+                  <% end %>
+                </div>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
