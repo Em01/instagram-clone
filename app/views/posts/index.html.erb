@@ -7,8 +7,7 @@
       unique.</p>
     <p>
       <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
-      <a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a>
-      </p>
+    </p>
   </div>
 </div>
 
@@ -26,6 +25,7 @@
           <% if post.user == current_user %>
             <%= link_to 'Delete', post_path(post), method: :delete %>   
           <% end %>
+          </div>
         <% end %>
       </div>
     </div>

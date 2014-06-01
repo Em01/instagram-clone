@@ -19,18 +19,23 @@ body {
   margin-top: 60px;
 }
 
-.jumbotron {
+
+.jumbotron  {
   background: image-url('collage.png'); 
   background-repeat: none;
 
-  
-
-
-  .container.top {
+   .container.top {
     background: rgba(255, 255, 255, 0.85);
     padding: 30px 50px;
     border-radius: 20px;
+
+    .container.bottom {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px 50px;
+    border-radius: 20px;
+    }
   }
 }
+
 
 
