@@ -11,7 +11,7 @@ describe 'tagging posts' do
         fill_in 'Description', with: 'My first Picture'
         attach_file 'Picture', Rails.root.join('spec/images/image_1.jpg')
         fill_in 'Tags', with: 'more, hello'
-        click_button 'Post it!'  
+        click_button 'Create Post'  
 
         expect(page).to have_link '#more'
         expect(page).to have_link '#hello'

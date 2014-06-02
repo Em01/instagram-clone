@@ -16,5 +16,11 @@ class Post < ActiveRecord::Base
   end
 
   def tag_names=(tag_names)
+    return if tag_names.blank?
+
+    tag_names.split(',').each do |tag_name|
+    tags.create(name: '#' + tag_name.delete('#'))
   end
+end
+
 end
