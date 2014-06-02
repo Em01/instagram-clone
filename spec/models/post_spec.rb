@@ -34,10 +34,16 @@ describe Post do
 
     describe 'multiple comma-separated tags' do 
       it 'adds each tag to the post' do 
-        post.tag_names = 'more, hello'
+        post.tag_names = 'more, hello, more'
         expect(post.tags.count).to eq 2
       end
     end
+
+    describe 'multiple duplicate tags'
+      it 'uses only unique tags' do 
+        post.tag_names = 'more, hello'
+        expect(post.tags.count).to eq 2
+      end
 
     describe 'reusing tags' do 
       let!(:tag) { Tag.create(name: '#yolo') }
@@ -46,7 +52,7 @@ describe Post do
         post.tag_names = 'yolo'
         expect(Tag.count).to eq 1
 
-        expect(tag.posts.count).toinclude post 
+        expect(tag.posts.count).to_include post 
       end
     end
   end
