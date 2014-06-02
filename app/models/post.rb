@@ -13,4 +13,7 @@ class Post < ActiveRecord::Base
   def tag_names
     ''
   end
+
+  def tag_names=(tag_names)
+  end
 end
