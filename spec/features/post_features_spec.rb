@@ -35,7 +35,7 @@ describe 'Making a post' do
 
         click_button 'Create Post'
 
-        expect(current_path).to eq posts_path
+        expect(current_path).to eq '/posts'
         expect(page).to have_content 'My new post'
         expect(page).to have_css 'img.uploaded-pic'
       end
@@ -46,7 +46,7 @@ describe 'deleting posts' do
     before do 
       emma = User.create(email: 'emma@e.com', password: '12345678', password_confirmation: '12345678')      
       login_as emma
-      Post.create(title: 'Hello', description: 'World', user: emma)
+        Post.create(title: 'Hello', description: 'World', user: emma)
     end
 
     it 'is removed from the posts page' do 
