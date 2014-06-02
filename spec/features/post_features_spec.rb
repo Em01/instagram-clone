@@ -47,7 +47,7 @@ describe 'deleting posts' do
       emma = User.create(email: 'emma@e.com', password: '12345678', password_confirmation: '12345678')      
       login_as emma
         Post.create(title: 'Hello', description: 'World', user: emma)
-    end
+      end
 
     it 'is removed from the posts page' do 
       visit '/posts'
