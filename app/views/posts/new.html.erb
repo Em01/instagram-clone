@@ -1,4 +1,4 @@
-<%= form_for @post, html: { multipart: true} do |f| %>
+<%= form_for @post, html: { multipart: true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -9,7 +9,7 @@
   <%= f.file_field :picture %>
 
   <%= f.label :tag_names, 'Tags' %>
-  <%= f.text_field :tag_names %>
+  <%= f.text_field :tag_names, data: { role: 'tagsinput' } %>
 
   <%= f.submit 'Create Post' %>
 <% end %>

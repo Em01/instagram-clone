@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 
 
 group :development, :test do 
+  gem 'debugger'
   gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'

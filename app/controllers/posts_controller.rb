@@ -10,12 +10,13 @@ class PostsController < ApplicationController
   end
 
   def create
+    
     @post = Post.new(params[:post].permit(:title, :description, :picture, :tag_names))
     @post.user = current_user
     @post.save!
 
     redirect_to posts_path
-    end
+  end
 
     def destroy
       @post = current_user.posts.find params[:id]

@@ -1,12 +1,13 @@
 class Post < ActiveRecord::Base
   has_attached_file :picture, 
-  styles: { medium: '400x400>' }, 
-  storage: :s3,
-  s3_credentials: {
-    bucket: 'Inster_Makers',
-    access_key_id: Rails.application.secrets.s3_access_key,
-    secret_access_key: Rails.application.secrets.s3_secret_key
-  }
+    styles: { medium: '400x400>' }, 
+    storage: :s3,
+    s3_credentials: {
+      bucket: 'Inster_Makers',
+      access_key_id: Rails.application.secrets.s3_access_key,
+      secret_access_key: Rails.application.secrets.s3_secret_key
+    }
+    
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   belongs_to :user
   has_and_belongs_to_many :tags
@@ -19,12 +20,13 @@ class Post < ActiveRecord::Base
     return if tag_names.blank?
 
     tag_names.split(/,\s?/).uniq.each do |tag_name|
+      puts tag_name
       formatted_name = '#' + tag_name.delete('#')
 
-    tag = Tag.find_or_create_by(name: formatted_name)
-    self.tags << tag
+      tag = Tag.find_or_create_by(name: formatted_name)
+      self.tags << tag
     # tags.create(name: )
+    end
   end
-end
 
 end
