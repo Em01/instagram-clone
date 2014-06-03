@@ -27,7 +27,7 @@
                 <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
                 <p>
                   <% post.tags.each do |tag| %>
-                    <%= link.to tag.name, '#' %>
+                    <%= link_to tag.name, '#' %>
                   <% end %>
                 </p>
                 <div class='buttons'>

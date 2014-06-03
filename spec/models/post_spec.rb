@@ -37,6 +37,13 @@ describe Post do
         post.tag_names = 'more, hello, more'
         expect(post.tags.count).to eq 2
       end
+
+      context 'without spaces' do 
+        it 'adds each tag to the post' do 
+          post.tag_names = 'more,hello'
+          expect(post.tags.count).to eq 2
+        end
+      end
     end
 
     describe 'multiple duplicate tags'
@@ -52,7 +59,7 @@ describe Post do
         post.tag_names = 'yolo'
         expect(Tag.count).to eq 1
 
-        expect(tag.posts.count).to_include post 
+        expect(tag.posts).to include post 
       end
     end
   end
