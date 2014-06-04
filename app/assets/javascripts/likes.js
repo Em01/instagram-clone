@@ -4,4 +4,6 @@ $(document).ready(function(){
     // event.stopPropagation();
     $.post(this.href);
   });
+
+  var connection = new WebSocketRails('localhost:3000/websocket');
 })
