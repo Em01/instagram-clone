@@ -6,6 +6,11 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 
+Capybara.server do |app, port|
+  require 'rack/handler/thin'
+  Rack::Handler::Thin.run(app, :Port => port)
+end
+
 Capybara.javascript_driver = :poltergeist
 
 # Requires supporting ruby files with custom matchers and macros, etc,
