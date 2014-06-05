@@ -17,7 +17,7 @@
   <% else %>
     <div class='row'>
       <% @posts.each do |post| %>
-        <div class='col-sm-4'>
+        <div class='col-sm-4 post' data-id='<%= post.id %>'>
 
             <div class="panel panel-default">
               <div class="panel-heading">
