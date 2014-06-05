@@ -1,7 +1,9 @@
 class LikesController < ApplicationController
 
   def new
+    WebsocketRails[:likes].trigger 'hi', {}
 
+    redirect_to '/posts'
   end
 
   def create 
