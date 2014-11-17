@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
-gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,6 +32,10 @@ gem 'websocket-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 
+group :production do 
+  gem 'pg'
+end
+
 group :development, :test do 
   gem 'debugger'
   gem 'annotate'
@@ -40,6 +44,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem "factory_girl_rails"
+  gem 'sqlite3'
 end
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
