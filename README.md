@@ -1,5 +1,5 @@
 #Instagram Clone
-This project was set by our coach Alex Peattie during weeks 9 and 10 at Makers Academy. The idea was for us to create a clone of the popular website Instagram using the Rails environment. The project was undertaken in order to gain greater familiarity with it.
+This project was set by our coach Alex Peattie during weeks 9 and 10 at Makers Academy. The idea was for us to create a clone of the popular website Instagram using the Rails environment. The project was undertaken in order to help us gain greater familiarity with it.
 
 ##Technologies Used
 - Sublime Text
